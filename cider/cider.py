@@ -47,8 +47,11 @@ class Cider:
             cider_scorer += (hypo[0], ref)
 
         (score, scores) = cider_scorer.compute_score()
+        idx2score = {}
+        for i, id in enumerate(imgIds):
+            idx2score[id] = scores[i]
 
-        return score, scores
+        return score, idx2score
 
     def method(self):
         return "CIDEr"
