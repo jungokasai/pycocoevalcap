@@ -112,7 +112,7 @@ class ClipScore:
         scores = [{'CLIPScore': clipscore, 'RefCLIPScore': refclipscore}
                   for clipscore, refclipscore in zip(per_instance_image_text, refclipscores)]
         idx2score = {}
-        for i, imgId in enumerate(imgIds)
+        for i, imgId in enumerate(imgIds):
             idx2score[imgId] = scores[i]
 
         return [np.mean(per_instance_image_text), np.mean(refclipscores)], idx2score
