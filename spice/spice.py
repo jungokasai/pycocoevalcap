@@ -95,7 +95,7 @@ class Spice:
             score_set[category] = {k: self.float_convert(v) for k, v in score_tuple.items()}
           scores.append(score_set)
         idx2score = {}
-        for i, imgId for enumerate(imgIds):
+        for i, imgId in enumerate(imgIds):
           idx2score[imgId] = scores[i]
         return average_score, idx2score
 
