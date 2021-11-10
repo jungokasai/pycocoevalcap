@@ -109,8 +109,8 @@ class ClipScore:
         # F-score
         refclipscores = 2 * per_instance_image_text * per_instance_text_text / (per_instance_image_text + per_instance_text_text)
         # scores is a list of dictionaries
-        scores = [{'CLIPScore': clipscore, 'RefCLIPScore': refclipscore}
-                  for clipscore, refclipscore in zip(per_instance_image_text, refclipscores)]
+        scores = [{'CLIPScore': clipscore, 'RefCLIPScore': refclipscore, 'RefOnlyCLIPScore': per_instance_text_text}
+                  for clipscore, refclipscore in zip(per_instance_image_text, refclipscores, per_instance_text_text)]
         idx2score = {}
         for i, imgId in enumerate(imgIds):
             idx2score[imgId] = scores[i]
